@@ -1,0 +1,3 @@
+model_name,overall_score,race_score,citation_accuracy,effective_citations_norm,task_metrics_norm,updated_at
+qwen-max,96.80,98.62,100.00,100.00,86.73,2025-10-27T06:54:45.092853
+qwen3-8b-it-sft-dpo-t,30.75,73.95,0.00,0.00,5.87,2025-12-15T05:28:08.743191

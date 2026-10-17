@@ -1,0 +1,213 @@
+{
+  "model_name": "qwen-max",
+  "task_id": "UG-2025-002",
+  "generated_at": "2025-10-27T06:54:45.069673",
+  "normalization_method": "ratio",
+  "race": {
+    "method": "ratio",
+    "target_total": 8.876,
+    "reference_total": 8.688,
+    "normalized_score": 100.0,
+    "ratio_score": 100.0,
+    "relative_advantage_score": 50.53,
+    "dimension_scores": [
+      {
+        "dimension": "coverage",
+        "weighted_score": 2.436,
+        "normalized_score": 93.7
+      },
+      {
+        "dimension": "depth",
+        "weighted_score": 2.338,
+        "normalized_score": 86.6
+      },
+      {
+        "dimension": "compliance",
+        "weighted_score": 2.054,
+        "normalized_score": 85.6
+      },
+      {
+        "dimension": "readability",
+        "weighted_score": 2.047,
+        "normalized_score": 89.0
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "name": "情境设定",
+      "dimension": "coverage",
+      "weight": 0.26,
+      "target_score": 9.37,
+      "reference_score": 8.7,
+      "gap": 0.67,
+      "explanation": "模型在“情境设定”上表现良好，覆盖到是否准确设定降雨参数、地理范围、敏感区域的关键细节，并补充了模拟中的情境化要点。",
+      "reference_comment": "参考稿给出雨强曲线与下游水位预警阈值"
+    },
+    {
+      "criterion_id": "C2",
+      "name": "联动深度",
+      "dimension": "depth",
+      "weight": 0.27,
+      "target_score": 8.66,
+      "reference_score": 9.0,
+      "gap": -0.34,
+      "explanation": "模型输出在“联动深度”存在不足：尚未充分落实是否明确多部门职责、通信机制与资源调配，建议补充与参考答案一致的核心条目。",
+      "reference_comment": "参考稿写明水务、住建、城管、交通等协同流程"
+    },
+    {
+      "criterion_id": "C3",
+      "name": "合规边界",
+      "dimension": "compliance",
+      "weight": 0.24,
+      "target_score": 8.56,
+      "reference_score": 8.6,
+      "gap": -0.04,
+      "explanation": "模型输出在“合规边界”存在不足：尚未充分落实是否引用现行应急预案或法规要求并保持一致，建议补充与参考答案一致的核心条目。",
+      "reference_comment": "参考稿引用《城市防洪应急预案》条款"
+    },
+    {
+      "criterion_id": "C4",
+      "name": "决策可用",
+      "dimension": "readability",
+      "weight": 0.23,
+      "target_score": 8.9,
+      "reference_score": 8.4,
+      "gap": 0.5,
+      "explanation": "模型在“决策可用”上表现良好，覆盖到是否给出可执行的指挥口径、预警阈值与备用方案的关键细节，并补充了模拟中的情境化要点。",
+      "reference_comment": "参考稿提供文字版演练脚本与应急广播口径"
+    }
+  ],
+  "fact": {
+    "total_pairs": 9,
+    "supported_pairs": 7,
+    "authoritative_pairs": 3,
+    "timely_pairs": 6,
+    "misuse_pairs": 2,
+    "citation_accuracy": 77.78,
+    "effective_citations": 7,
+    "source_authority_ratio": 42.86,
+    "timeliness_ratio": 85.71,
+    "misuse_rate": 22.22,
+    "pairs": [
+      {
+        "statement": "【引用《城市公共安全协同治理的模式构建与路径探索》】极端暴雨下需提前启用城市公共安全协同指挥体系",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%8D%8F%E5%90%8C%E6%B2%BB%E7%90%86%E7%9A%84%E6%A8%A1%E5%BC%8F%E6%9E%84%E5%BB%BA%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%8E%A2%E7%B4%A2.pdf",
+        "normalized_citation": "城市公共安全协同治理的模式构建与路径探索.pdf",
+        "support": true,
+        "authority": true,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《城市公共安全协同治理的模式构建与路径探索.pdf》"
+      },
+      {
+        "statement": "【引用《国务院办公厅关于印发国家城市轨道交通运营突发事件应急预案的通知》】轨道交通应急预案应纳入暴雨分级限流措施",
+        "citation": "/api/v1/documents/download?filename=%E5%9B%BD%E5%8A%A1%E9%99%A2%E5%8A%9E%E5%85%AC%E5%8E%85%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E5%9B%BD%E5%AE%B6%E5%9F%8E%E5%B8%82%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E8%BF%90%E8%90%A5%E7%AA%81%E5%8F%91%E4%BA%8B%E4%BB%B6%E5%BA%94%E6%80%A5%E9%A2%84%E6%A1%88%E7%9A%84%E9%80%9A%E7%9F%A5.pdf",
+        "normalized_citation": "国务院办公厅关于印发国家城市轨道交通运营突发事件应急预案的通知.pdf",
+        "support": true,
+        "authority": true,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《国务院办公厅关于印发国家城市轨道交通运营突发事件应急预案的通知.pdf》"
+      },
+      {
+        "statement": "【引用《《智慧城管——杭州市上城区智能化城市治理研究》大数据时代社会治理智能化研究》】排水应急需要智慧感知数据支撑调度",
+        "citation": "/api/v1/documents/download?filename=%E3%80%8A%E6%99%BA%E6%85%A7%E5%9F%8E%E7%AE%A1%E2%80%94%E2%80%94%E6%9D%AD%E5%B7%9E%E5%B8%82%E4%B8%8A%E5%9F%8E%E5%8C%BA%E6%99%BA%E8%83%BD%E5%8C%96%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E7%A0%94%E7%A9%B6%E3%80%8B%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3%E7%A4%BE%E4%BC%9A%E6%B2%BB%E7%90%86%E6%99%BA%E8%83%BD%E5%8C%96%E7%A0%94%E7%A9%B6.pdf",
+        "normalized_citation": "《智慧城管——杭州市上城区智能化城市治理研究》大数据时代社会治理智能化研究.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《《智慧城管——杭州市上城区智能化城市治理研究》大数据时代社会治理智能化研究.pdf》"
+      },
+      {
+        "statement": "【引用《“全周期管理”释放城市治理新信号》】暴雨信息发布应纳入“全周期管理”理念",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E5%85%A8%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%E2%80%9D%E9%87%8A%E6%94%BE%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E6%96%B0%E4%BF%A1%E5%8F%B7.pdf",
+        "normalized_citation": "“全周期管理”释放城市治理新信号.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": false,
+        "misuse": false,
+        "notes": "知识库引用《“全周期管理”释放城市治理新信号.pdf》"
+      },
+      {
+        "statement": "【引用《“协同治理”视角下的社会组织公共服务供给》】社会组织参与社区层面安全提示可以缓解舆情",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E5%8D%8F%E5%90%8C%E6%B2%BB%E7%90%86%E2%80%9D%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%A4%BE%E4%BC%9A%E7%BB%84%E7%BB%87%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1%E4%BE%9B%E7%BB%99.pdf",
+        "normalized_citation": "“协同治理”视角下的社会组织公共服务供给.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《“协同治理”视角下的社会组织公共服务供给.pdf》"
+      },
+      {
+        "statement": "【引用《城市交通拥堵治理模式理论的新进展》】泵站增容可以完全消除所有积水风险",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E4%BA%A4%E9%80%9A%E6%8B%A5%E5%A0%B5%E6%B2%BB%E7%90%86%E6%A8%A1%E5%BC%8F%E7%90%86%E8%AE%BA%E7%9A%84%E6%96%B0%E8%BF%9B%E5%B1%95.pdf",
+        "normalized_citation": "城市交通拥堵治理模式理论的新进展.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "与排水专项无直接证据支撑；知识库引用《城市交通拥堵治理模式理论的新进展.pdf》"
+      },
+      {
+        "statement": "【引用《城市河道生态治理综述》】移动泵车调配需与电力抢修联动形成闭环",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E6%B2%B3%E9%81%93%E7%94%9F%E6%80%81%E6%B2%BB%E7%90%86%E7%BB%BC%E8%BF%B0.pdf",
+        "normalized_citation": "城市河道生态治理综述.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《城市河道生态治理综述.pdf》"
+      },
+      {
+        "statement": "【引用《城市间环境治理合作：行动、网络及其演变——基于长三角30个城市的府际协议数据分析》】跨区支援需要完善的物资储备体系",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E9%97%B4%E7%8E%AF%E5%A2%83%E6%B2%BB%E7%90%86%E5%90%88%E4%BD%9C%EF%BC%9A%E8%A1%8C%E5%8A%A8%E3%80%81%E7%BD%91%E7%BB%9C%E5%8F%8A%E5%85%B6%E6%BC%94%E5%8F%98%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E9%95%BF%E4%B8%89%E8%A7%9230%E4%B8%AA%E5%9F%8E%E5%B8%82%E7%9A%84%E5%BA%9C%E9%99%85%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.pdf",
+        "normalized_citation": "城市间环境治理合作：行动、网络及其演变——基于长三角30个城市的府际协议数据分析.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《城市间环境治理合作：行动、网络及其演变——基于长三角30个城市的府际协议数据分析.pdf》"
+      },
+      {
+        "statement": "【引用《城市交通拥堵的成因及治理问题研究》】必须每次演练都延长至 6 小时才能满足规范",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E4%BA%A4%E9%80%9A%E6%8B%A5%E5%A0%B5%E7%9A%84%E6%88%90%E5%9B%A0%E5%8F%8A%E6%B2%BB%E7%90%86%E9%97%AE%E9%A2%98%E7%A0%94%E7%A9%B6.pdf",
+        "normalized_citation": "城市交通拥堵的成因及治理问题研究.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "规范未要求固定时长，论断失实；知识库引用《城市交通拥堵的成因及治理问题研究.pdf》"
+      }
+    ]
+  },
+  "task_metrics": [
+    {
+      "metric": "Consistency",
+      "value": 0.857,
+      "normalized": 85.72,
+      "description": "多轮推演口径一致性",
+      "reference_value": 0.81,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "Violation",
+      "value": 0.053,
+      "normalized": 94.73,
+      "description": "违例率（越低越好）",
+      "reference_value": 0.08,
+      "direction": "lower_is_better"
+    }
+  ],
+  "metadata": {
+    "title": "极端暴雨下的城区排水应急演练推演",
+    "domain": "应急管理",
+    "task_type": "scenario_simulation",
+    "difficulty": "hard",
+    "time_ref": "2025-06",
+    "reference_report": "UG-2025-002.md",
+    "candidate_answer": "【市政府办公厅秘书处批示】\n一、事项概览\n- 事项名称：极端暴雨下的城区排水应急演练推演\n- 输出要求：相关材料\n- 时间参考：2025-06\n- 情况说明：综合政务事项需明晰责任链路与节点控制。\n- 任务诉求：\n二、办理要点\n- 梳理责任清单，明确时间表\n- 建立“需求登记-协同处置-反馈回访”闭环\n- 强化数据留痕与信息公开\n三、指标与支撑\n- 按期完成率≥95%\n- 满意度≥90%\n四、风险提示\n- 统筹信息发布与现场调度，避免群体性风险。\n- 责任不清导致拖延\n- 沟通机制缺失\n五、后续安排\n- 依托城市运行平台动态监测并形成日报。\n- 将进展纳入“周调度+月通报”机制\n六、依据资料\n【资料1】城市公共安全协同治理的模式构建与路径探索\n【资料2】国务院办公厅关于印发国家城市轨道交通运营突发事件应急预案的通知\n【资料3】《智慧城管——杭州市上城区智能化城市治理研究》大数据时代社会治理智能化研究\n【资料4】“全周期管理”释放城市治理新信号\n【资料5】“协同治理”视角下的社会组织公共服务供给"
+  }
+}

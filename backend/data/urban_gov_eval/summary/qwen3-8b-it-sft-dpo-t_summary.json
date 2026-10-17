@@ -1,0 +1,85 @@
+{
+  "model_name": "qwen3-8b-it-sft-dpo-t",
+  "generated_at": "2025-12-15T05:28:08.743191",
+  "normalization_method": "ratio",
+  "task_count": 5,
+  "race_score": 73.95,
+  "citation_accuracy": 0.0,
+  "effective_citations_norm": 0.0,
+  "task_metrics_norm": 5.87,
+  "overall_score": 30.75,
+  "race_ci": {
+    "lower": 65.41,
+    "upper": 81.85
+  },
+  "citation_accuracy_ci": {
+    "lower": 0.0,
+    "upper": 0.0
+  },
+  "overall_ci": {
+    "lower": 27.03,
+    "upper": 34.04
+  },
+  "metrics": {
+    "race_scores": [
+      85.55,
+      57.24,
+      69.78,
+      77.78,
+      79.39
+    ],
+    "citation_accuracy_values": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effective_citations_norm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "task_metrics_norm": [
+      6.08,
+      3.43,
+      5.19,
+      12.05,
+      2.58
+    ],
+    "misuse_rates": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "normalization_method": "ratio"
+  },
+  "domain_breakdown": [
+    {
+      "domain": "通用治理",
+      "task_count": 5,
+      "race": 73.95,
+      "citation_accuracy": 0.0,
+      "effective_citations_norm": 0.0,
+      "task_metrics_norm": 5.87,
+      "overall": 30.75
+    }
+  ],
+  "references": {
+    "task_ids": [
+      "GEN-0001",
+      "GEN-0002",
+      "GEN-0003",
+      "GEN-0004",
+      "GEN-0005"
+    ],
+    "task_count": 5,
+    "available_tasks": 5,
+    "question_bank": "general_a_01_test.json",
+    "task_limit": 5
+  }
+}

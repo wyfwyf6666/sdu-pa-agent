@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── SDU 公管智能体 · 设计系统 ── */
+
+:root {
+  --sdu-burgundy: #7A1014;
+  --sdu-burgundy-dark: #5C0C0F;
+  --sdu-burgundy-light: #F9ECEC;
+  --sdu-text: #2C3E50;
+  --sdu-text-light: #5A6B7A;
+  --sdu-bg: #F8F9FA;
+  --sdu-border: #E0E4E8;
+  --sdu-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Typography */
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Inter', -apple-system, sans-serif;
+  color: #2C3E50;
+  background: #F8F9FA;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Prose overrides for academic look */
+.prose {
+  line-height: 1.75;
+  color: #2C3E50;
+}
+.prose h2, .prose h3 {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  color: #7A1014;
+  border-bottom: 1px solid #E0E4E8;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.prose strong { color: #5C0C0F; }
+.prose a { color: #7A1014; text-decoration: underline; text-underline-offset: 2px; }
+.prose blockquote {
+  border-left: 3px solid #7A1014;
+  background: #F9ECEC;
+  padding: 1rem 1.25rem;
+  font-style: normal;
+  color: #5C0C0F;
+}
+.prose table { border-collapse: collapse; width: 100%; }
+.prose th { background: #F9ECEC; color: #7A1014; font-weight: 600; padding: 0.5rem 0.75rem; border: 1px solid #E0E4E8; }
+.prose td { padding: 0.5rem 0.75rem; border: 1px solid #E0E4E8; }
+
+/* Citation markers */
+.citation-ref {
+  color: #7A1014;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 1px;
+}
+
+/* Soft card */
+.card-sdu {
+  background: #FFFFFF;
+  border: 1px solid #E0E4E8;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+.card-sdu:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Primary button */
+.btn-sdu {
+  background: #7A1014;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-sdu:hover {
+  background: #5C0C0F;
+}
+
+/* Input field */
+.input-sdu {
+  border: 1px solid #E0E4E8;
+  border-radius: 6px;
+  background: #FAFBFC;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-sdu:focus {
+  outline: none;
+  border-color: #7A1014;
+  box-shadow: 0 0 0 3px rgba(122, 16, 20, 0.1);
+}
+
+/* Campus background overlay for internal pages */
+.campus-bg {
+  position: relative;
+}
+.campus-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.04;
+  z-index: -1;
+  pointer-events: none;
+}

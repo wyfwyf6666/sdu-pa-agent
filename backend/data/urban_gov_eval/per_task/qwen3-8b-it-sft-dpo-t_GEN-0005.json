@@ -1,0 +1,192 @@
+{
+  "model_name": "qwen3-8b-it-sft-dpo-t",
+  "task_id": "GEN-0005",
+  "generated_at": "2025-12-15T05:27:28.957034",
+  "normalization_method": "ratio",
+  "race": {
+    "method": "ratio",
+    "target_total": 6.553,
+    "reference_total": 8.254,
+    "normalized_score": 79.39,
+    "ratio_score": 79.39,
+    "relative_advantage_score": 44.26,
+    "dimension_scores": [
+      {
+        "dimension": "coverage",
+        "weighted_score": 1.386,
+        "normalized_score": 53.3
+      },
+      {
+        "dimension": "depth",
+        "weighted_score": 0.686,
+        "normalized_score": 26.4
+      },
+      {
+        "dimension": "compliance",
+        "weighted_score": 2.081,
+        "normalized_score": 86.7
+      },
+      {
+        "dimension": "readability",
+        "weighted_score": 2.4,
+        "normalized_score": 100.0
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "name": "问题契合度",
+      "dimension": "coverage",
+      "weight": 0.26,
+      "target_score": 5.33,
+      "reference_score": 8.2,
+      "gap": -2.87,
+      "explanation": "覆盖率约为 33.3%，能回应主要问题要素。",
+      "reference_comment": "参考答案完整覆盖提问要素"
+    },
+    {
+      "criterion_id": "C2",
+      "name": "诊断与分析",
+      "dimension": "depth",
+      "weight": 0.26,
+      "target_score": 2.64,
+      "reference_score": 8.5,
+      "gap": -5.86,
+      "explanation": "与参考答案内容重合度 1.9%，体现一定诊断深度。",
+      "reference_comment": "参考答案以数据/案例支撑判断"
+    },
+    {
+      "criterion_id": "C3",
+      "name": "政策遵循",
+      "dimension": "compliance",
+      "weight": 0.24,
+      "target_score": 8.67,
+      "reference_score": 8.3,
+      "gap": 0.37,
+      "explanation": "命中政策关键词 7 次，表述具备一定合规依据。",
+      "reference_comment": "参考答案列出政策依据与主体分工"
+    },
+    {
+      "criterion_id": "C4",
+      "name": "结构可读",
+      "dimension": "readability",
+      "weight": 0.24,
+      "target_score": 10.0,
+      "reference_score": 8.0,
+      "gap": 2.0,
+      "explanation": "输出包含 16 个段落 / 12 个列点，结构度量 100.0%。",
+      "reference_comment": "参考答案采用摘要+条列+建议格式"
+    }
+  ],
+  "fact": {
+    "total_pairs": 5,
+    "supported_pairs": 0,
+    "authoritative_pairs": 0,
+    "timely_pairs": 0,
+    "misuse_pairs": 5,
+    "citation_accuracy": 0.0,
+    "effective_citations": 0,
+    "source_authority_ratio": 0.0,
+    "timeliness_ratio": 0.0,
+    "misuse_rate": 100.0,
+    "pairs": [
+      {
+        "statement": "【结构化回答】\n一、组织与制度\n- 成立街道数字治理专班，明确“需求提出-产品迭代-运行维护”职责链",
+        "citation": "/api/v1/documents/download?filename=2000%E5%B9%B4%E4%BB%A5%E6%9D%A5%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E9%87%8D%E5%BF%83%E4%B8%8B%E7%A7%BB%EF%BC%9A%E7%A0%94%E7%A9%B6%E8%84%89%E7%BB%9C%E4%B8%8E%E5%8F%91%E5%B1%95%E5%8A%A8%E5%90%91%E2%80%94%E2%80%94%E4%BB%A5CNKI%E6%A3%80%E7%B4%A2%E8%AE%BA%E6%96%87%E4%B8%BA%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1.pdf",
+        "normalized_citation": "2000年以来城市治理重心下移：研究脉络与发展动向——以CNKI检索论文为研究对象.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《2000年以来城市治理重心下移：研究脉络与发展动向——以CNKI检索论文为研究对象.pdf》"
+      },
+      {
+        "statement": "- 建立数据标准、接口开放、隐私保护等制度，纳入网格化考核",
+        "citation": "/api/v1/documents/download?filename=PPP%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%94%BF%E5%BA%9C%E5%92%8C%E6%B0%91%E8%90%A5%E4%BC%81%E4%B8%9A%E7%9A%84%E5%A5%91%E7%BA%A6%E5%85%B3%E7%B3%BB%E5%8F%8A%E5%85%B6%E6%B2%BB%E7%90%86%E2%80%94%E2%80%94%E4%BB%A5%E4%B8%AD%E5%9B%BD%E5%9F%8E%E5%B8%82%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BDPPP%E4%B8%BA%E4%BE%8B.pdf",
+        "normalized_citation": "PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf》"
+      },
+      {
+        "statement": "二、平台功能\n- 打通网格事件、群众诉求、公共服务、市场主体等数据，构建“一张图”指挥界面",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%B8%89%E6%96%B9%E8%81%94%E5%8A%A8%E2%80%9D%E8%A7%86%E9%98%88%E4%B8%8B%E5%9F%8E%E5%B8%82%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E5%86%8D%E6%80%9D%E8%80%83%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E6%AD%A6%E6%B1%89%E5%88%9B%E6%96%B0%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E6%A0%B7%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90.pdf",
+        "normalized_citation": "“三方联动”视阈下城市社区治理再思考——基于武汉创新社区治理样本的分析.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《“三方联动”视阈下城市社区治理再思考——基于武汉创新社区治理样本的分析.pdf》"
+      },
+      {
+        "statement": "- 配置移动端采集、AI 智能派单、工单闭环提醒等能力；对高频事项提供自助办理入口",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%B8%AD%E5%A4%AE%E5%87%BA%E9%A2%98%E2%80%94%E5%9C%B0%E6%96%B9%E8%87%AA%E9%80%89%E2%80%9D_%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E6%94%BF%E7%AD%96%E4%BD%95%E4%BB%A5%E5%8F%8D%E5%88%B6%E6%94%BF%E7%AD%96%E6%95%88%E8%83%BD%E5%B1%82%E5%B1%82%E8%A1%B0%E5%87%8F.pdf",
+        "normalized_citation": "“中央出题—地方自选”_城市治理政策何以反制政策效能层层衰减.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《“中央出题—地方自选”_城市治理政策何以反制政策效能层层衰减.pdf》"
+      },
+      {
+        "statement": "三、数据协同\n- 采用统一身份认证与 API 网关，推动公安、民政、城管等部门数据按最小必要原则共享",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%BA%92%E8%81%94%E7%BD%91%2B%E6%94%BF%E5%8A%A1%E6%9C%8D%E5%8A%A1%E2%80%9D%E5%B9%B3%E5%8F%B0%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E5%9F%8E%E5%B8%82%E8%90%A5%E5%95%86%E7%8E%AF%E5%A2%83%EF%BC%9F%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E4%BA%92%E5%8A%A8%E6%B2%BB%E7%90%86%E7%9A%84%E8%A7%86%E8%A7%92.pdf",
+        "normalized_citation": "“互联网+政务服务”平台如何优化城市营商环境？——基于互动治理的视角.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 12.5%；知识库引用《“互联网+政务服务”平台如何优化城市营商环境？——基于互动治理的视角.pdf》"
+      }
+    ]
+  },
+  "task_metrics": [
+    {
+      "metric": "Rouge-L",
+      "value": 0.016,
+      "normalized": 1.59,
+      "description": "候选与参考答案的最长公共子序列 F1",
+      "reference_value": 0.72,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "TokenOverlap",
+      "value": 0.009,
+      "normalized": 0.85,
+      "description": "关键词集合的 Jaccard 重合度",
+      "reference_value": 0.65,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "LengthFit",
+      "value": 1.947,
+      "normalized": 5.31,
+      "description": "输出篇幅与参考答案的贴合比值 (目标=1)",
+      "reference_value": 1.0,
+      "direction": "higher_is_better"
+    }
+  ],
+  "metadata": {
+    "title": "街道社区推进数字化治理时，应如何设计平台功能并防止...",
+    "domain": "通用治理",
+    "task_type": "general_qa",
+    "difficulty": "easy",
+    "time_ref": "N/A",
+    "reference_report": "general_a_01_test.json",
+    "candidate_answer": "在街道社区推进数字化治理时，设计平台功能和防止“数据孤岛”是两个关键的方面。以下是一些建议：\n\n### 平台功能设计\n\n1. **用户友好性**：确保平台界面简洁易用，方便居民和工作人员操作。提供多语言支持和无障碍设计，以满足不同群体的需求。\n\n2. **数据集成**：平台应能整合来自不同部门的数据，如公共安全、卫生、教育等，以提供全面的社区信息。\n\n3. **实时更新**：支持实时数据更新和动态信息推送，确保用户获取最新的社区动态和政策信息。\n\n4. **互动功能**：提供社区论坛、意见反馈和在线咨询功能，促进居民参与和互动。\n\n5. **安全性和隐私保护**：采用高级加密技术和权限管理，确保数据安全并保护用户隐私。\n\n6. **数据分析工具**：集成数据分析和可视化工具，帮助社区管理者做出数据驱动的决策。\n\n### 防止“数据孤岛”\n\n1. **标准化数据格式**：采用统一的数据标准和格式，确保不同系统之间的数据兼容性和可交换性。\n\n2. **开放API**：提供开放的API接口，允许第三方应用和服务访问数据，以促进跨平台协作。\n\n3. **跨部门协作机制**：建立跨部门的数据共享和协作机制，定期召开会议以讨论数据共享策略和问题。\n\n4. **数据治理框架**：制定明确的数据治理政策，包括数据收集、存储、共享和销毁的流程，以确保数据的有效管理。\n\n5. **云服务和集中存储**：利用云技术实现数据的集中存储和管理，减少数据孤立的风险。\n\n6. **持续监测和评估**：定期评估平台的运行情况和数据共享效果，及时调整策略以优化数据流动。\n\n通过以上措施，可以有效设计数字化治理平台功能，并防止数据孤岛的形成，从而提升街道社区的管理效率和服务质量。",
+    "reference_answer_excerpt": "【结构化回答】\n一、组织与制度\n- 成立街道数字治理专班，明确“需求提出-产品迭代-运行维护”职责链。\n- 建立数据标准、接口开放、隐私保护等制度，纳入网格化考核。\n\n二、平台功能\n- 打通网格事件、群众诉求、公共服务、市场主体等数据，构建“一张图”指挥界面。\n- 配置移动端采集、AI 智能派单、工单闭环提醒等能力；对高频事项提供自助办理入口。\n\n三、数据协同\n- 采用统一身份认证与 API 网关，推动公安、民政、城管等部门数据按最小必要原则共享。\n- 建设数据目录与元数据管理系统，提供订阅机制，避免重复采集。\n\n四、风险防控\n- 引入第三方安全评估，部署审计与日志追踪，防止个人信息泄露。\n- 设置离线应急模式，保障设备故障或网络中断期间的服务连续性。\n\n五、成效评估\n- 按“响应时长、办结率、群众满意度”三类指标开展月度评审，并据此迭代功能。",
+    "prompt_messages": [
+      {
+        "role": "system",
+        "content": "你需要从组织保障、技术应用和风险防控三个维度回答问题。"
+      },
+      {
+        "role": "user",
+        "content": "街道社区推进数字化治理时，应如何设计平台功能并防止“数据孤岛”？"
+      }
+    ]
+  }
+}

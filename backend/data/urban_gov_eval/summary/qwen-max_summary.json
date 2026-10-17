@@ -1,0 +1,73 @@
+{
+  "model_name": "qwen-max",
+  "generated_at": "2025-10-27T06:54:45.092853",
+  "normalization_method": "ratio",
+  "task_count": 2,
+  "race_score": 98.62,
+  "citation_accuracy": 100.0,
+  "effective_citations_norm": 100.0,
+  "task_metrics_norm": 86.73,
+  "overall_score": 96.8,
+  "race_ci": {
+    "lower": 97.24,
+    "upper": 100.0
+  },
+  "citation_accuracy_ci": {
+    "lower": 100.0,
+    "upper": 100.0
+  },
+  "overall_ci": {
+    "lower": 95.55,
+    "upper": 98.04
+  },
+  "metrics": {
+    "race_scores": [
+      97.24,
+      100.0
+    ],
+    "citation_accuracy_values": [
+      100.0,
+      100.0
+    ],
+    "effective_citations_norm": [
+      100.0,
+      100.0
+    ],
+    "task_metrics_norm": [
+      83.25,
+      90.22
+    ],
+    "misuse_rates": [
+      0.0,
+      0.0
+    ],
+    "normalization_method": "ratio"
+  },
+  "domain_breakdown": [
+    {
+      "domain": "应急管理",
+      "task_count": 1,
+      "race": 100.0,
+      "citation_accuracy": 100.0,
+      "effective_citations_norm": 100.0,
+      "task_metrics_norm": 90.22,
+      "overall": 98.04
+    },
+    {
+      "domain": "公共服务",
+      "task_count": 1,
+      "race": 97.24,
+      "citation_accuracy": 100.0,
+      "effective_citations_norm": 100.0,
+      "task_metrics_norm": 83.25,
+      "overall": 95.55
+    }
+  ],
+  "references": {
+    "task_ids": [
+      "UG-2025-001",
+      "UG-2025-002"
+    ],
+    "task_count": 2
+  }
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "title": "设备采购申请",
+    "type": "purchase",
+    "content": "申请购买办公设备",
+    "department": "公共事业部门",
+    "applicant": "张三",
+    "status": "approved",
+    "submit_time": "2023-11-01T10:00:00",
+    "updatedAt": "2023-11-02T14:30:00",
+    "urgency": "normal",
+    "current_step": 2,
+    "steps": [
+      {
+        "step_id": 1,
+        "name": "部门主管审批",
+        "approver": "李主管",
+        "status": "approved",
+        "comment": "同意采购",
+        "approve_time": "2023-11-01T11:00:00"
+      },
+      {
+        "step_id": 2,
+        "name": "财务审批",
+        "approver": "王财务",
+        "status": "pending",
+        "comment": null,
+        "approve_time": null
+      }
+    ],
+    "comments": [],
+    "files": []
+  },
+  {
+    "id": 2,
+    "title": "会议室预订",
+    "type": "meeting",
+    "content": "部门周会预订",
+    "department": "公共事业部门",
+    "applicant": "李四",
+    "status": "pending",
+    "submit_time": "2023-12-01T09:00:00",
+    "urgency": "normal",
+    "current_step": 1,
+    "steps": [
+      {
+        "step_id": 1,
+        "name": "行政审批",
+        "approver": "赵行政",
+        "status": "pending",
+        "comment": null,
+        "approve_time": null
+      }
+    ],
+    "comments": [],
+    "files": []
+  },
+  {
+    "id": 3,
+    "title": "预算申请",
+    "type": "budget",
+    "content": "第四季度预算申请",
+    "department": "公共事业部门",
+    "applicant": "王五",
+    "status": "rejected",
+    "submit_time": "2023-10-15T11:00:00",
+    "updatedAt": "2023-10-16T16:45:00",
+    "urgency": "high",
+    "current_step": 1,
+    "steps": [
+      {
+        "step_id": 1,
+        "name": "财务审批",
+        "approver": "王财务",
+        "status": "rejected",
+        "comment": "预算超出限额",
+        "approve_time": "2023-10-16T16:45:00"
+      }
+    ],
+    "comments": [],
+    "files": []
+  }
+] 

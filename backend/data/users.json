@@ -1,0 +1,47 @@
+{
+  "c6ca6279-f067-4d18-be0c-1f5cacee33fa": {
+    "username": "admin",
+    "role": "admin",
+    "user_id": "c6ca6279-f067-4d18-be0c-1f5cacee33fa",
+    "password_hash": "$2b$12$OerIoujXPgQfg36rNMVnT.wBzER.RKu/csgKARI67v53KvofoThqq",
+    "created_time": "2025-12-08 23:52:21.525808",
+    "last_login": "2026-09-21 23:37:02.669041",
+    "is_active": true
+  },
+  "89b0f0b4-7fbd-4515-9173-c5374a2e41f6": {
+    "username": "kevin",
+    "role": "user",
+    "user_id": "89b0f0b4-7fbd-4515-9173-c5374a2e41f6",
+    "password_hash": "$2b$12$onpTU4LV2B4PwXM9CKeWfugRMhCSVIyol/iyxkBIl49UMqwln6.wK",
+    "created_time": "2025-12-09 10:13:46.418533",
+    "last_login": "2026-01-16 10:30:00.476561",
+    "is_active": true
+  },
+  "f4cba925-a862-4ead-aab2-e9ade7d1f81f": {
+    "username": "asada",
+    "role": "user",
+    "user_id": "f4cba925-a862-4ead-aab2-e9ade7d1f81f",
+    "password_hash": "$2b$12$GZMdRLT7e5kYS3qrXtQJaOJfqTyssM4Z3B8ePepX4YPWc69RXnAPW",
+    "created_time": "2025-12-15 13:08:00.391563",
+    "last_login": "2025-12-15 15:51:13.945231",
+    "is_active": true
+  },
+  "a4b29025-3f8e-4fd8-a208-880cf3ad5d7b": {
+    "username": "abc",
+    "role": "user",
+    "user_id": "a4b29025-3f8e-4fd8-a208-880cf3ad5d7b",
+    "password_hash": "$2b$12$0NcY8pQvmptXkpbl8ZDbfeMxVGhSzJ36CYSkxJVncQSw1TufS50cW",
+    "created_time": "2026-01-14 15:48:31.232985",
+    "last_login": "2026-01-14 16:40:59.113835",
+    "is_active": true
+  },
+  "ca7cee58-5462-435e-bd8f-9621aa079ad4": {
+    "username": "王列洛",
+    "role": "admin",
+    "user_id": "ca7cee58-5462-435e-bd8f-9621aa079ad4",
+    "password_hash": "$2b$12$eDw9olTitvotPWTsJnMt5OAyb1hc3PzjfaBmcct86icBYWoflLFj.",
+    "created_time": "2026-05-16 14:26:47.216839",
+    "last_login": "2026-09-21 23:41:46.812011",
+    "is_active": true
+  }
+}

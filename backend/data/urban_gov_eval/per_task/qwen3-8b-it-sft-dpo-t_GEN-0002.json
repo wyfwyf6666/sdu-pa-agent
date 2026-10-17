@@ -1,0 +1,192 @@
+{
+  "model_name": "qwen3-8b-it-sft-dpo-t",
+  "task_id": "GEN-0002",
+  "generated_at": "2025-12-15T05:27:28.957034",
+  "normalization_method": "ratio",
+  "race": {
+    "method": "ratio",
+    "target_total": 4.724,
+    "reference_total": 8.254,
+    "normalized_score": 57.24,
+    "ratio_score": 57.24,
+    "relative_advantage_score": 36.4,
+    "dimension_scores": [
+      {
+        "dimension": "coverage",
+        "weighted_score": 0.78,
+        "normalized_score": 30.0
+      },
+      {
+        "dimension": "depth",
+        "weighted_score": 0.824,
+        "normalized_score": 31.7
+      },
+      {
+        "dimension": "compliance",
+        "weighted_score": 0.72,
+        "normalized_score": 30.0
+      },
+      {
+        "dimension": "readability",
+        "weighted_score": 2.4,
+        "normalized_score": 100.0
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "name": "问题契合度",
+      "dimension": "coverage",
+      "weight": 0.26,
+      "target_score": 3.0,
+      "reference_score": 8.2,
+      "gap": -5.2,
+      "explanation": "覆盖率约为 0.0%，能回应主要问题要素。",
+      "reference_comment": "参考答案完整覆盖提问要素"
+    },
+    {
+      "criterion_id": "C2",
+      "name": "诊断与分析",
+      "dimension": "depth",
+      "weight": 0.26,
+      "target_score": 3.17,
+      "reference_score": 8.5,
+      "gap": -5.33,
+      "explanation": "与参考答案内容重合度 8.9%，体现一定诊断深度。",
+      "reference_comment": "参考答案以数据/案例支撑判断"
+    },
+    {
+      "criterion_id": "C3",
+      "name": "政策遵循",
+      "dimension": "compliance",
+      "weight": 0.24,
+      "target_score": 3.0,
+      "reference_score": 8.3,
+      "gap": -5.3,
+      "explanation": "命中政策关键词 1 次，表述具备一定合规依据。",
+      "reference_comment": "参考答案列出政策依据与主体分工"
+    },
+    {
+      "criterion_id": "C4",
+      "name": "结构可读",
+      "dimension": "readability",
+      "weight": 0.24,
+      "target_score": 10.0,
+      "reference_score": 8.0,
+      "gap": 2.0,
+      "explanation": "输出包含 21 个段落 / 19 个列点，结构度量 100.0%。",
+      "reference_comment": "参考答案采用摘要+条列+建议格式"
+    }
+  ],
+  "fact": {
+    "total_pairs": 5,
+    "supported_pairs": 0,
+    "authoritative_pairs": 0,
+    "timely_pairs": 0,
+    "misuse_pairs": 5,
+    "citation_accuracy": 0.0,
+    "effective_citations": 0,
+    "source_authority_ratio": 0.0,
+    "timeliness_ratio": 0.0,
+    "misuse_rate": 100.0,
+    "pairs": [
+      {
+        "statement": "【答复要点】\n一、资金筹措\n- 启动“财政补贴+专项债+社会资本”三元结构，对符合条件的小区给予 30%~50% 改造补助",
+        "citation": "/api/v1/documents/download?filename=2000%E5%B9%B4%E4%BB%A5%E6%9D%A5%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E9%87%8D%E5%BF%83%E4%B8%8B%E7%A7%BB%EF%BC%9A%E7%A0%94%E7%A9%B6%E8%84%89%E7%BB%9C%E4%B8%8E%E5%8F%91%E5%B1%95%E5%8A%A8%E5%90%91%E2%80%94%E2%80%94%E4%BB%A5CNKI%E6%A3%80%E7%B4%A2%E8%AE%BA%E6%96%87%E4%B8%BA%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1.pdf",
+        "normalized_citation": "2000年以来城市治理重心下移：研究脉络与发展动向——以CNKI检索论文为研究对象.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 16.7%；知识库引用《2000年以来城市治理重心下移：研究脉络与发展动向——以CNKI检索论文为研究对象.pdf》"
+      },
+      {
+        "statement": "- 试点物业专项维修资金“先垫后补”，对低收入老人实施差异化减免",
+        "citation": "/api/v1/documents/download?filename=PPP%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%94%BF%E5%BA%9C%E5%92%8C%E6%B0%91%E8%90%A5%E4%BC%81%E4%B8%9A%E7%9A%84%E5%A5%91%E7%BA%A6%E5%85%B3%E7%B3%BB%E5%8F%8A%E5%85%B6%E6%B2%BB%E7%90%86%E2%80%94%E2%80%94%E4%BB%A5%E4%B8%AD%E5%9B%BD%E5%9F%8E%E5%B8%82%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BDPPP%E4%B8%BA%E4%BE%8B.pdf",
+        "normalized_citation": "PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf》"
+      },
+      {
+        "statement": "二、设施改造\n- 优先改造无障碍电梯、坡道、扶手、照明等项目，制定“一栋一设计”清单",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%B8%89%E6%96%B9%E8%81%94%E5%8A%A8%E2%80%9D%E8%A7%86%E9%98%88%E4%B8%8B%E5%9F%8E%E5%B8%82%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E5%86%8D%E6%80%9D%E8%80%83%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E6%AD%A6%E6%B1%89%E5%88%9B%E6%96%B0%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E6%A0%B7%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90.pdf",
+        "normalized_citation": "“三方联动”视阈下城市社区治理再思考——基于武汉创新社区治理样本的分析.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 11.1%；知识库引用《“三方联动”视阈下城市社区治理再思考——基于武汉创新社区治理样本的分析.pdf》"
+      },
+      {
+        "statement": "- 结合海绵城市理念完善排水、适老健身设施，统一技术标准和验收规范",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%B8%AD%E5%A4%AE%E5%87%BA%E9%A2%98%E2%80%94%E5%9C%B0%E6%96%B9%E8%87%AA%E9%80%89%E2%80%9D_%E5%9F%8E%E5%B8%82%E6%B2%BB%E7%90%86%E6%94%BF%E7%AD%96%E4%BD%95%E4%BB%A5%E5%8F%8D%E5%88%B6%E6%94%BF%E7%AD%96%E6%95%88%E8%83%BD%E5%B1%82%E5%B1%82%E8%A1%B0%E5%87%8F.pdf",
+        "normalized_citation": "“中央出题—地方自选”_城市治理政策何以反制政策效能层层衰减.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 0.0%；知识库引用《“中央出题—地方自选”_城市治理政策何以反制政策效能层层衰减.pdf》"
+      },
+      {
+        "statement": "三、服务供给\n- 建立社区养老服务驿站，嵌入助餐、康复、关怀探访功能",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E4%BA%92%E8%81%94%E7%BD%91%2B%E6%94%BF%E5%8A%A1%E6%9C%8D%E5%8A%A1%E2%80%9D%E5%B9%B3%E5%8F%B0%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E5%9F%8E%E5%B8%82%E8%90%A5%E5%95%86%E7%8E%AF%E5%A2%83%EF%BC%9F%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E4%BA%92%E5%8A%A8%E6%B2%BB%E7%90%86%E7%9A%84%E8%A7%86%E8%A7%92.pdf",
+        "normalized_citation": "“互联网+政务服务”平台如何优化城市营商环境？——基于互动治理的视角.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "关键词重合度 16.7%；知识库引用《“互联网+政务服务”平台如何优化城市营商环境？——基于互动治理的视角.pdf》"
+      }
+    ]
+  },
+  "task_metrics": [
+    {
+      "metric": "Rouge-L",
+      "value": 0.068,
+      "normalized": 6.78,
+      "description": "候选与参考答案的最长公共子序列 F1",
+      "reference_value": 0.72,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "TokenOverlap",
+      "value": 0.035,
+      "normalized": 3.51,
+      "description": "关键词集合的 Jaccard 重合度",
+      "reference_value": 0.65,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "LengthFit",
+      "value": 2.564,
+      "normalized": 0.0,
+      "description": "输出篇幅与参考答案的贴合比值 (目标=1)",
+      "reference_value": 1.0,
+      "direction": "higher_is_better"
+    }
+  ],
+  "metadata": {
+    "title": "针对老旧社区适老化改造，如何兼顾资金筹措、设施改造...",
+    "domain": "通用治理",
+    "task_type": "general_qa",
+    "difficulty": "easy",
+    "time_ref": "N/A",
+    "reference_report": "general_a_01_test.json",
+    "candidate_answer": "针对老旧社区的适老化改造，兼顾资金筹措、设施改造和服务供给需要综合考虑多方面的因素和策略。以下是一些建议：\n\n1. **资金筹措**：\n   - **政府支持**：争取地方和国家政府的专项资金支持，申请相关补贴和资助项目。\n   - **社会资本**：吸引社会资本参与，通过公私合作（PPP）模式进行融资。\n   - **社区基金**：建立社区基金，鼓励居民和企业捐款，形成长期的资金支持。\n   - **金融工具**：利用银行贷款、绿色债券等金融工具进行融资。\n\n2. **设施改造**：\n   - **无障碍设计**：对社区内的道路、楼梯、电梯等进行无障碍改造，确保老人出行便利。\n   - **智能化设施**：引入智能家居和社区监控系统，提高老人的生活安全性。\n   - **公共空间改造**：改造和增加适合老人活动的公共空间，如健身场所、休闲区等。\n   - **医疗设施**：完善社区内的医疗服务设施，确保老人能够及时获得医疗服务。\n\n3. **服务供给**：\n   - **社区服务**：建立或加强社区服务中心，提供老人日间照料、心理咨询、健康检查等服务。\n   - **志愿者服务**：组织志愿者团队，为老人提供陪伴、购物、家务等帮助。\n   - **专业护理**：引入专业的护理团队，为有需要的老人提供上门护理服务。\n   - **文化活动**：组织丰富的文化娱乐活动，促进老人社交和心理健康。\n\n4. **综合协调**：\n   - **需求评估**：进行详细的需求评估，确保改造和服务供给符合实际需求。\n   - **社区参与**：鼓励社区居民参与决策过程，增加改造方案的透明度和接受度。\n   - **持续评估**：建立持续评估机制，定期检查改造效果和服务质量，及时调整策略。\n\n通过以上策略，可以形成一个资金充足、设施完善、服务到位的适老化社区改造方案，提升老年居民的生活质量。",
+    "reference_answer_excerpt": "【答复要点】\n一、资金筹措\n- 启动“财政补贴+专项债+社会资本”三元结构，对符合条件的小区给予 30%~50% 改造补助。\n- 试点物业专项维修资金“先垫后补”，对低收入老人实施差异化减免。\n\n二、设施改造\n- 优先改造无障碍电梯、坡道、扶手、照明等项目，制定“一栋一设计”清单。\n- 结合海绵城市理念完善排水、适老健身设施，统一技术标准和验收规范。\n\n三、服务供给\n- 建立社区养老服务驿站，嵌入助餐、康复、关怀探访功能。\n- 引入志愿者与社会企业提供上门维修、智慧助老设备安装。\n\n四、协同与监管\n- 由街道牵头成立联席小组，实行“周调度+月评估”。\n- 建立居民参与机制，公开成本、施工与满意度数据，确保透明可监督。",
+    "prompt_messages": [
+      {
+        "role": "system",
+        "content": "请围绕城市基层治理，提供可执行的政策建议。"
+      },
+      {
+        "role": "user",
+        "content": "针对老旧社区适老化改造，如何兼顾资金筹措、设施改造和服务供给？"
+      }
+    ]
+  }
+}

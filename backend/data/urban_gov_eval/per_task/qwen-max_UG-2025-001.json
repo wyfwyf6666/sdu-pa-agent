@@ -1,0 +1,183 @@
+{
+  "model_name": "qwen-max",
+  "task_id": "UG-2025-001",
+  "generated_at": "2025-10-27T06:54:45.069673",
+  "normalization_method": "ratio",
+  "race": {
+    "method": "ratio",
+    "target_total": 8.137,
+    "reference_total": 8.368,
+    "normalized_score": 97.24,
+    "ratio_score": 97.24,
+    "relative_advantage_score": 49.3,
+    "dimension_scores": [
+      {
+        "dimension": "coverage",
+        "weighted_score": 2.192,
+        "normalized_score": 78.3
+      },
+      {
+        "dimension": "depth",
+        "weighted_score": 2.105,
+        "normalized_score": 87.7
+      },
+      {
+        "dimension": "compliance",
+        "weighted_score": 1.838,
+        "normalized_score": 76.6
+      },
+      {
+        "dimension": "readability",
+        "weighted_score": 2.002,
+        "normalized_score": 83.4
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "name": "要点覆盖",
+      "dimension": "coverage",
+      "weight": 0.28,
+      "target_score": 7.83,
+      "reference_score": 8.2,
+      "gap": -0.37,
+      "explanation": "模型输出在“要点覆盖”存在不足：尚未充分落实是否完整识别政策目标、对象、任务与考核要素，建议补充与参考答案一致的核心条目。",
+      "reference_comment": "参考稿准确列出三大任务与重点指标"
+    },
+    {
+      "criterion_id": "C2",
+      "name": "分析深度",
+      "dimension": "depth",
+      "weight": 0.24,
+      "target_score": 8.77,
+      "reference_score": 8.8,
+      "gap": -0.03,
+      "explanation": "模型输出在“分析深度”存在不足：尚未充分落实是否结合数据与案例进行诊断，提出针对性洞见，建议补充与参考答案一致的核心条目。",
+      "reference_comment": "参考稿引用住建部通报与地方试点案例进行论证"
+    },
+    {
+      "criterion_id": "C3",
+      "name": "政策遵循",
+      "dimension": "compliance",
+      "weight": 0.24,
+      "target_score": 7.66,
+      "reference_score": 8.5,
+      "gap": -0.84,
+      "explanation": "模型输出在“政策遵循”存在不足：尚未充分落实是否明确引用政策条款、合规边界与实施主体，建议补充与参考答案一致的核心条目。",
+      "reference_comment": "参考稿逐条对照行动方案的责任主体与时间节点"
+    },
+    {
+      "criterion_id": "C4",
+      "name": "结构可读",
+      "dimension": "readability",
+      "weight": 0.24,
+      "target_score": 8.34,
+      "reference_score": 8.0,
+      "gap": 0.34,
+      "explanation": "模型在“结构可读”上表现良好，覆盖到是否提供面向决策者的结构化表达与摘要的关键细节，并补充了模拟中的情境化要点。",
+      "reference_comment": "参考稿采用摘要+要点表格+建议段落，结构较清晰"
+    }
+  ],
+  "fact": {
+    "total_pairs": 6,
+    "supported_pairs": 5,
+    "authoritative_pairs": 3,
+    "timely_pairs": 4,
+    "misuse_pairs": 1,
+    "citation_accuracy": 83.33,
+    "effective_citations": 5,
+    "source_authority_ratio": 60.0,
+    "timeliness_ratio": 80.0,
+    "misuse_rate": 16.67,
+    "pairs": [
+      {
+        "statement": "【引用《“党建+”在城市社区治理中的独特功能和实现形式》】社区党组织牵头多方协同能提高老旧改造执行力",
+        "citation": "/api/v1/documents/download?filename=%E2%80%9C%E5%85%9A%E5%BB%BA%2B%E2%80%9D%E5%9C%A8%E5%9F%8E%E5%B8%82%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E4%B8%AD%E7%9A%84%E7%8B%AC%E7%89%B9%E5%8A%9F%E8%83%BD%E5%92%8C%E5%AE%9E%E7%8E%B0%E5%BD%A2%E5%BC%8F.pdf",
+        "normalized_citation": "“党建+”在城市社区治理中的独特功能和实现形式.pdf",
+        "support": true,
+        "authority": true,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《“党建+”在城市社区治理中的独特功能和实现形式.pdf》"
+      },
+      {
+        "statement": "【引用《城市基层治理的社会化机制——以深圳市Z街“网格化管理社会化服务”项目为例》】改造项目应同步建立网格化治理与居民议事机制",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86%E7%9A%84%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E4%BB%A5%E6%B7%B1%E5%9C%B3%E5%B8%82Z%E8%A1%97%E2%80%9C%E7%BD%91%E6%A0%BC%E5%8C%96%E7%AE%A1%E7%90%86%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%9C%8D%E5%8A%A1%E2%80%9D%E9%A1%B9%E7%9B%AE%E4%B8%BA%E4%BE%8B.pdf",
+        "normalized_citation": "城市基层治理的社会化机制——以深圳市Z街“网格化管理社会化服务”项目为例.pdf",
+        "support": true,
+        "authority": true,
+        "timeliness": false,
+        "misuse": false,
+        "notes": "知识库引用《城市基层治理的社会化机制——以深圳市Z街“网格化管理社会化服务”项目为例.pdf》"
+      },
+      {
+        "statement": "【引用《PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例》】分类制定公共投入与居民共建的资金结构",
+        "citation": "/api/v1/documents/download?filename=PPP%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%94%BF%E5%BA%9C%E5%92%8C%E6%B0%91%E8%90%A5%E4%BC%81%E4%B8%9A%E7%9A%84%E5%A5%91%E7%BA%A6%E5%85%B3%E7%B3%BB%E5%8F%8A%E5%85%B6%E6%B2%BB%E7%90%86%E2%80%94%E2%80%94%E4%BB%A5%E4%B8%AD%E5%9B%BD%E5%9F%8E%E5%B8%82%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BDPPP%E4%B8%BA%E4%BE%8B.pdf",
+        "normalized_citation": "PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例.pdf》"
+      },
+      {
+        "statement": "【引用《城市老旧社区创新社区治理的探索——以北京市P街道为例》】老旧社区改造需联动物业评估与服务升级",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E8%80%81%E6%97%A7%E7%A4%BE%E5%8C%BA%E5%88%9B%E6%96%B0%E7%A4%BE%E5%8C%BA%E6%B2%BB%E7%90%86%E7%9A%84%E6%8E%A2%E7%B4%A2%E2%80%94%E2%80%94%E4%BB%A5%E5%8C%97%E4%BA%AC%E5%B8%82P%E8%A1%97%E9%81%93%E4%B8%BA%E4%BE%8B.pdf",
+        "normalized_citation": "城市老旧社区创新社区治理的探索——以北京市P街道为例.pdf",
+        "support": true,
+        "authority": true,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《城市老旧社区创新社区治理的探索——以北京市P街道为例.pdf》"
+      },
+      {
+        "statement": "【引用《城市基层治理的条块协调_正式政治与非正式政治——来自上海的城市管理经验》】制定阶梯收费与兜底补贴可提升改造可持续性",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86%E7%9A%84%E6%9D%A1%E5%9D%97%E5%8D%8F%E8%B0%83_%E6%AD%A3%E5%BC%8F%E6%94%BF%E6%B2%BB%E4%B8%8E%E9%9D%9E%E6%AD%A3%E5%BC%8F%E6%94%BF%E6%B2%BB%E2%80%94%E2%80%94%E6%9D%A5%E8%87%AA%E4%B8%8A%E6%B5%B7%E7%9A%84%E5%9F%8E%E5%B8%82%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C.pdf",
+        "normalized_citation": "城市基层治理的条块协调_正式政治与非正式政治——来自上海的城市管理经验.pdf",
+        "support": true,
+        "authority": false,
+        "timeliness": true,
+        "misuse": false,
+        "notes": "知识库引用《城市基层治理的条块协调_正式政治与非正式政治——来自上海的城市管理经验.pdf》"
+      },
+      {
+        "statement": "【引用《城市工业园区存量更新中的利益博弈与治理创新——深圳、常州高新区两种模式的比较_》】统一改造验收标准即可直接复制到所有小区",
+        "citation": "/api/v1/documents/download?filename=%E5%9F%8E%E5%B8%82%E5%B7%A5%E4%B8%9A%E5%9B%AD%E5%8C%BA%E5%AD%98%E9%87%8F%E6%9B%B4%E6%96%B0%E4%B8%AD%E7%9A%84%E5%88%A9%E7%9B%8A%E5%8D%9A%E5%BC%88%E4%B8%8E%E6%B2%BB%E7%90%86%E5%88%9B%E6%96%B0%E2%80%94%E2%80%94%E6%B7%B1%E5%9C%B3%E3%80%81%E5%B8%B8%E5%B7%9E%E9%AB%98%E6%96%B0%E5%8C%BA%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83_.pdf",
+        "normalized_citation": "城市工业园区存量更新中的利益博弈与治理创新——深圳、常州高新区两种模式的比较_.pdf",
+        "support": false,
+        "authority": false,
+        "timeliness": false,
+        "misuse": true,
+        "notes": "推断缺乏针对老旧居住区的直接证据；知识库引用《城市工业园区存量更新中的利益博弈与治理创新——深圳、常州高新区两种模式的比较_.pdf》"
+      }
+    ]
+  },
+  "task_metrics": [
+    {
+      "metric": "ROUGE-L",
+      "value": 0.68,
+      "normalized": 68.0,
+      "description": "与参考报告的摘要一致性",
+      "reference_value": 0.74,
+      "direction": "higher_is_better"
+    },
+    {
+      "metric": "BERTScore",
+      "value": 0.985,
+      "normalized": 98.51,
+      "description": "语义一致性（F1）",
+      "reference_value": 0.83,
+      "direction": "higher_is_better"
+    }
+  ],
+  "metadata": {
+    "title": "老旧小区宜居改造政策执行方案评估",
+    "domain": "公共服务",
+    "task_type": "policy_analysis",
+    "difficulty": "medium",
+    "time_ref": "2024-12",
+    "reference_report": "UG-2025-001.md",
+    "candidate_answer": "【市政府办公厅秘书处批示】\n一、事项概览\n- 事项名称：老旧小区宜居改造政策执行方案评估\n- 输出要求：相关材料\n- 时间参考：2024-12\n- 情况说明：综合政务事项需明晰责任链路与节点控制。\n- 任务诉求：\n二、办理要点\n- 梳理责任清单，明确时间表\n- 建立“需求登记-协同处置-反馈回访”闭环\n- 强化数据留痕与信息公开\n三、指标与支撑\n- 按期完成率≥95%\n- 满意度≥90%\n四、风险提示\n- 统筹信息发布与现场调度，避免群体性风险。\n- 责任不清导致拖延\n- 沟通机制缺失\n五、后续安排\n- 依托城市运行平台动态监测并形成日报。\n- 将进展纳入“周调度+月通报”机制\n六、依据资料\n【资料1】“党建+”在城市社区治理中的独特功能和实现形式\n【资料2】城市基层治理的社会化机制——以深圳市Z街“网格化管理社会化服务”项目为例\n【资料3】PPP模式下政府和民营企业的契约关系及其治理——以中国城市基础设施PPP为例\n【资料4】城市老旧社区创新社区治理的探索——以北京市P街道为例\n【资料5】城市基层治理的条块协调_正式政治与非正式政治——来自上海的城市管理经验"
+  }
+}
