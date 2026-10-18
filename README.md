@@ -36,30 +36,93 @@
 - **npm**: >= 9.0.0
 - **操作系统**: Windows / macOS / Linux
 
-### 1. 下载数据和模型文件
+### 1. 准备数据文件与模型文件
 
-由于文件较大（约 1GB），数据和模型文件需要单独下载：
+这两类文件需要分开看：**业务数据（data.zip）必需**；**模型文件（models.zip）可选**，代码支持联网自动下载，也支持用环境变量指向任意兼容模型。
 
-- **models.zip** (606.4MB): https://pan.baidu.com/s/18OU-5nnoOb8aPkBtcW-pGA?pwd=36yf
+#### 1.1 业务数据（必需）
+
 - **data.zip** (275.8MB): https://pan.baidu.com/s/1_O1TrmwPxpZZu3b-KoaPDQ?pwd=an7k
 
-解压并放置文件：
+包含 `city.json`、`users.json`、`approvals.json`、`urban_gov_eval/`（评估题库），以及 `public/`、`private/` 下已构建好的 FAISS 索引与 metadata。这些属于项目私有数据，没有公开下载源，只能使用随仓库分发的包。
 
 ```bash
-# Windows: 将 models.zip 解压到 backend\models\，data.zip 解压到 backend\data\
+# Windows: 将 data.zip 解压到 backend\data\
 # Linux/macOS:
-unzip models.zip -d backend/
 unzip data.zip -d backend/
 ```
+
+> 缺少 `users.json` 时后端会自动创建空用户表并生成默认管理员账号，项目仍可启动；但已有知识库索引与 `urban_gov_eval/query.jsonl` 缺失会导致对应功能不可用。
+
+#### 1.2 模型文件（可选，四种方式任选其一）
+
+RAG 使用 `distiluse-base-multilingual-cased-v1`（512 维）做向量化与检索；语音识别使用 Whisper `base.pt`，仅在安装 `openai-whisper` 后生效（默认依赖中不含，语音功能会自动禁用）。
+
+**方式 A：运行时自动下载（推荐，需可访问 HuggingFace）**
+
+```bash
+# .env
+EMBEDDING_MODEL_NAME=sentence-transformers/distiluse-base-multilingual-cased-v1
+```
+
+首次启动时 `sentence-transformers` 会自动把模型下载到 `~/.cache/huggingface`。国内网络可先启用镜像：
+
+```bash
+export HF_ENDPOINT=https://hf-mirror.com   # 或写入 .env
+```
+
+**方式 B：通过国内镜像手动下载**
+
+```bash
+pip install -U huggingface_hub
+export HF_ENDPOINT=https://hf-mirror.com
+hf download sentence-transformers/distiluse-base-multilingual-cased-v1 \
+  --local-dir backend/models/distiluse-base-multilingual-cased-v1
+```
+
+> `huggingface_hub < 0.34` 没有 `hf` 命令，把开头的 `hf` 换成 `huggingface-cli` 即可。
+
+或使用魔搭 ModelScope：
+
+```bash
+pip install modelscope
+modelscope download --model sentence-transformers/distiluse-base-multilingual-cased-v1 \
+  --local-dir backend/models/distiluse-base-multilingual-cased-v1
+```
+
+**方式 C：使用网盘离线包**
+
+- **models.zip** (606.4MB): https://pan.baidu.com/s/18OU-5nnoOb8aPkBtcW-pGA?pwd=36yf
+
+适合完全离线、无法访问 HuggingFace 的环境：
+
+```bash
+# Windows: 将 models.zip 解压到 backend\models\
+# Linux/macOS:
+unzip models.zip -d backend/
+```
+
+**方式 D：复用已有的兼容模型**
+
+```bash
+# .env（绝对路径，或相对当前启动目录的路径）
+EMBEDDING_MODEL_PATH=/path/to/your/embedding-model
+```
+
+> ⚠️ 更换向量模型后维度可能变化（默认 distiluse 为 512 维）。此时已有 FAISS 索引会因维度不一致而检索失败，需要重建：公共库可运行 `python scripts/init_kb.py --force`；私有知识组可在界面上重新上传文档，或调用 `document_service.build_merged_index(..., force_full_rebuild=True)` 重建。
+
+若完全离线且不想用网盘，也可把任意兼容模型直接放到默认路径 `backend/models/distiluse-base-multilingual-cased-v1/`，无需修改配置。
+
+语音识别为可选能力：安装 `openai-whisper` 后，将 `base.pt` 放到 `backend/models/base.pt`；或让它首次运行时自动下载（缓存到 `~/.cache/whisper`）。
 
 最终目录结构：
 
 ```
 backend/
-├── models/
-│   ├── base.pt
-│   └── distiluse-base-multilingual-cased-v1/
-└── data/
+├── models/                                    # 可选，见 1.2
+│   ├── base.pt                                # 可选：语音识别
+│   └── distiluse-base-multilingual-cased-v1/  # 向量模型
+└── data/                                      # 必需，见 1.1
     ├── city.json
     ├── metadata.json
     ├── users.json
