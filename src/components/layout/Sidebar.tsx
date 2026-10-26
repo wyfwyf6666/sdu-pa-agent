@@ -14,6 +14,7 @@ import {
   FileSearch,
   Shield,
   Database,
+  Library,
 } from 'lucide-react'
 
 const menuItems = [
@@ -21,6 +22,7 @@ const menuItems = [
   { name: '千章预审稿', icon: FileSearch, href: '/pre-review' },
   { name: '学术诚信检测', icon: Shield, href: '/pre-review/academic-integrity' },
   { name: '本地题录库', icon: Database, href: '/bibliography' },
+  { name: '选题综述', icon: Library, href: '/topic-review' },
   { name: '知识库管理', icon: FileText, href: '/documents' },
   { name: '概念解析', icon: Lightbulb, href: '/concepts' },
   { name: '论文阅读', icon: ScrollText, href: '/papers' },
@@ -45,7 +47,7 @@ export default function Sidebar() {
       {/* Menu */}
       <nav className="flex-1 px-3 py-4 space-y-0.5">
         {menuItems.map((item) => {
-          const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+          const isActive = pathname === item.href || (pathname?.startsWith(item.href + '/') ?? false)
           const Icon = item.icon
 
           return (

@@ -297,7 +297,26 @@ class OpenAlexClient:
         self._limiter.wait()
         try:
             url = f"{self.BASE_URL}/works?search={quote(query)}&per_page=5"
-            resp = self._client.get(url, headers=self._headers())
+            resp = None
+            last_err: Optional[Exception] = None
+            # OpenAlex 免费池有 429 限流：指数退避重试（2s / 4s）
+            for attempt in range(3):
+                if attempt > 0:
+                    time.sleep(2 * attempt)
+                try:
+                    resp = self._client.get(url, headers=self._headers())
+                except Exception as e:  # 网络抖动重试
+                    last_err = e
+                    continue
+                if resp.status_code != 429:
+                    break
+                last_err = RuntimeError(f"OpenAlex 429 too many requests (attempt {attempt + 1})")
+            if resp is None:
+                LOGGER.warning("OpenAlex search error: %s", last_err)
+                return []
+            if resp.status_code == 429:
+                LOGGER.warning("OpenAlex search still rate-limited after retries")
+                return []
             resp.raise_for_status()
             data = resp.json()
             results = [self._parse_work("OpenAlex", w) for w in data.get("results", [])]

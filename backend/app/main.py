@@ -53,6 +53,7 @@ include_router_safely("backend.app.routers.analytics", "analytics")
 include_router_safely("backend.app.routers.history", "history")
 include_router_safely("backend.app.routers.urban_gov_eval", "urban_gov_eval")
 include_router_safely("backend.app.routers.local_bibliography", "bibliography")
+include_router_safely("backend.app.routers.topic_review", "topic_review")
 
 if __name__ == "__main__":
     import multiprocessing

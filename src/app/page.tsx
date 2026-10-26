@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MessageSquare, Lightbulb, ScrollText, BookOpen, Database, GraduationCap, ArrowRight, Sparkles, Zap, FileSearch } from 'lucide-react'
+import { MessageSquare, Lightbulb, ScrollText, BookOpen, Database, GraduationCap, ArrowRight, Sparkles, Zap, FileSearch, Library } from 'lucide-react'
 
 const modules = [
   {
@@ -67,6 +67,15 @@ const modules = [
     bg: 'bg-orange-50',
     iconColor: 'text-orange-600',
     href: '/pre-review'
+  },
+  {
+    title: '选题综述',
+    desc: '输入选题，AI 给出选题建议、检索中英文献并生成文献综述，一键导出文献 Excel 表。',
+    icon: Library,
+    color: 'from-cyan-500 to-sky-600',
+    bg: 'bg-cyan-50',
+    iconColor: 'text-cyan-600',
+    href: '/topic-review'
   }
 ]
 
@@ -153,7 +162,7 @@ export default function Home() {
               { value: '163+', label: '学术论文' },
               { value: '3109', label: '知识三元组' },
               { value: 'DeepSeek', label: '驱动模型' },
-              { value: '7', label: '功能模块' }
+              { value: '8', label: '功能模块' }
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-2xl font-bold text-white">{s.value}</div>
