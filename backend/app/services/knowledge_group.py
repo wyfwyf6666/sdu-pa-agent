@@ -12,8 +12,14 @@ class KnowledgeGroupService:
     """知识组管理服务"""
 
     def __init__(self):
-        root_dir = Path(__file__).resolve().parents[3]
-        self.private_root = root_dir / "backend" / "data" / "private"
+        # 与 routers/files.py 的路径逻辑保持一致：
+        # 存在 C:/city_research_data（ASCII 路径）时优先使用，规避 FAISS 中文路径问题
+        _ASCII_DATA = Path("C:/city_research_data")
+        if _ASCII_DATA.exists():
+            self.private_root = _ASCII_DATA / "private"
+        else:
+            root_dir = Path(__file__).resolve().parents[3]
+            self.private_root = root_dir / "backend" / "data" / "private"
         self.metadata_file = self.private_root / "metadata.json"
         self._ensure_structure()
 
